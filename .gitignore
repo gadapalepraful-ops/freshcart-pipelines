@@ -1,0 +1,8 @@
+.env
+*.pkl
+*.csv
+mage.log
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
