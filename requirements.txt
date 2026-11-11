@@ -4,4 +4,4 @@ numpy
 scikit-learn
 pika
 requests
-snowflake-connector-python
+snowflake-connector-pythonmage-ai==0.9.80

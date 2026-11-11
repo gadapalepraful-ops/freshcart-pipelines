@@ -1,0 +1,58 @@
+
+blocks:
+- name: load_iris
+  type: data_loader
+  uuid: load_iris
+  upstream_blocks: []
+  downstream_blocks:
+  - validate_iris
+  status: not_executed
+
+- name: validate_iris
+  type: transformer
+  uuid: validate_iris
+  upstream_blocks:
+  - load_iris
+  downstream_blocks:
+  - prepare_data_iris
+  status: not_executed
+
+- name: prepare_data
+  type: transformer
+  uuid: prepare_data_iris
+  upstream_blocks:
+  - validate_iris
+  downstream_blocks:
+  - train_model
+  status: not_executed
+
+- name: train_model
+  type: transformer
+  uuid: train_model
+  upstream_blocks:
+  - prepare_data_iris
+  downstream_blocks:
+  - save_results
+  - evaluate_model
+  status: not_executed
+
+- name: save_results
+  type: data_exporter
+  uuid: save_results
+  upstream_blocks:
+  - train_model
+  downstream_blocks: []
+  status: not_executed
+
+- name: evaluate_model
+  type: data_exporter
+  uuid: evaluate_model
+  upstream_blocks:
+  - train_model
+  downstream_blocks: []
+  status: not_executed
+
+name: iris_classifier
+type: python
+uuid: iris_classifier
+widgets: []

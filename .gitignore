@@ -6,3 +6,15 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ipynb_checkpoints/
+# Mage runtime and configuration
+**/io_config.yaml
+**/.ssh_tunnel/
+**/.mage_temp_profiles/
+**/mage_data/
+**/mage-ai.db
+**/logs/
+**/.variables/
+
+# Temporary files
+*.log
+~/
